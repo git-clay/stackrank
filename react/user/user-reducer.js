@@ -1,21 +1,42 @@
-import { combineReducers } from "redux";
+export default function reducer(state={
+    user: {
+      id: null,
+      name: null,
+      age: null,
+    },
+    fetching: false,
+    fetched: false,
+    error: null,
+  }, action) {
 
-const userReducer = (state={},actions) => {
-	switch(action.type){
-		case "CHANGE_NAME":{
-			state = {...state, name: action.payload};
-			break;
-		}
-		case "CHANGE_AGE": {
-			state = {...state, age: action.payload};
-			break;
-		}
-	}
-	return state;
+    switch (action.type) {
+      case "FETCH_USER": {
+        return {...state, fetching: true}
+      }
+      case "FETCH_USER_REJECTED": {
+        return {...state, fetching: false, error: action.payload}
+      }
+      case "FETCH_USER_FULFILLED": {
+        return {
+          ...state,
+          fetching: false,
+          fetched: true,
+          user: action.payload,
+        }
+      }
+      case "SET_USER_NAME": {
+        return {
+          ...state,
+          user: {...state.user, name: action.payload},
+        }
+      }
+      case "SET_USER_AGE": {
+        return {
+          ...state,
+          user: {...state.user, age: action.payload},
+        }
+      }
+    }
+
+    return state
 }
-const reducer = combineReducers({
-	user: userReducer
-})
-
-
-export reducer;

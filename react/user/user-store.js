@@ -5,14 +5,11 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware"
 import axios from "axios"; // async RESTful stuff
 
-import reducer from "./user-reducer.js"
+import reducer from "./user-reducer"
 
 
-const logger = (store) => (next) => (action) +> {
-	console.log('action fired', action);
-	next(action);
-}
-const error = (store) => (next) => (action) +> {
+
+const error = (store) => (next) => (action) => {
 	try {
 		next(action);
 	} catch(e) {
@@ -21,7 +18,7 @@ const error = (store) => (next) => (action) +> {
 }
 
 
-const middleware = applyMiddleware(logger)
+const middleware = applyMiddleware(logger())
 
 // store.subscribe(() => {
 // 	console.log("store changed", store.getState())

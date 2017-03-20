@@ -5,8 +5,8 @@ var babel = require('gulp-babel')
 
 gulp.task('default', function () {
   // browserify({
-  //   entries: 'app/index.jsx',
-  //   extensions: ['.jsx'],
+  //   entries: 'react/client.js',
+  //   extensions: ['.js'],
   //   debug: true
   // })
   return gulp.src('react/client.js')
