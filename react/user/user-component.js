@@ -1,3 +1,5 @@
+// main/app/view is subscribed to the store and dispatches to action
+
 import React from "react"
 // import { connect } from "react-redux"
 
@@ -9,7 +11,7 @@ import React from "react"
 // 	}
 // })
 
-export default class Layout extends React.Component {
+export default class User extends React.Component {
 	// componenetWillMount(){
 
 	// }

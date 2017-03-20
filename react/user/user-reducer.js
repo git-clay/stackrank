@@ -1,3 +1,5 @@
+// Reducer handles actions and changes state
+
 export default function reducer(state={
     user: {
       id: null,

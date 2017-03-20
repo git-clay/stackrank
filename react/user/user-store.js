@@ -1,3 +1,5 @@
+// stores state from reducer(s) and and sends to view
+
 import { applyMiddleware, createStore } from "redux";
 
 import logger from "redux-logger";
@@ -9,13 +11,13 @@ import reducer from "./user-reducer"
 
 
 
-const error = (store) => (next) => (action) => {
-	try {
-		next(action);
-	} catch(e) {
-		console.log("ERROR!!", e)
-	}
-}
+// const error = (store) => (next) => (action) => {
+// 	try {
+// 		next(action);
+// 	} catch(e) {
+// 		console.log("ERROR!!", e)
+// 	}
+// }
 
 
 const middleware = applyMiddleware(logger())
