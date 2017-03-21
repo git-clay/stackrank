@@ -7,8 +7,7 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware"
 import axios from "axios"; // async RESTful stuff
 
-import reducer from "./user-reducer"
-
+import reducer from "./index.js"
 
 
 // const error = (store) => (next) => (action) => {
