@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, IndexRoute, Link } from 'react-router-dom';
+import { Router, Route, Link, IndexRoute } from 'react-router';
 
 import App from './main-component';
-import SignupPage from '../user/signup/SignupPage'
+import Home from '../home/home-component';
+import SignupPage from '../user/signup/SignupPage';
 
 export default (
-	<Router>
-		<Route path='/' component={App}>
-			<Route path='signup' component={SignupPage}/>
+		<Route path="/" component={App}>
+			<IndexRoute component={Home} />
+			<Route path="signup" component={SignupPage} />
 		</Route>
-	</Router>
 )

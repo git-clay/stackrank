@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { connect } from 'react-redux';
 // import { logout } from '../user/login/authActions';
 
@@ -8,12 +8,12 @@ export default () => {
      <nav className="navbar navbar-default">
         <div className="container-fluid">
           <div className="navbar-header">
-            <a className="navbar-brand" href='#'>Red Dice</a>
+            <Link to="/" className="navbar-brand">Stack-Rank</Link>
           </div>
 
           <div className="collapse navbar-collapse">
             <ul className='nav navbar-nav navbar-right'>
-              <li><a href='#'>Sign up</a></li>
+              <li><Link to='/signup'>Sign up</Link></li>
             </ul>
           </div>
         </div>
